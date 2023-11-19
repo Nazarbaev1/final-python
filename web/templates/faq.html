@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link href="{{url_for('static', filename='assets/css/faq.css')}}" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" rel="stylesheet" >
+    <!-- =====Fontawesome CDN Link===== -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet" >
+    
+
+    
+
+   <title>Faq</title>
+</head>
+<header>
+    <div class="navbar">
+        <div class="navbar-container">
+            <div class="logo-container">
+                <h1 class="logo"><a href="/">flakes</a></h1>
+            </div>
+            <div class="menu-container">
+                <ul class="menu-list">
+                    <li><a href="{{ url_for('home') }}" class="menu-list-item">Home</a></li>
+
+                    <li><a href="{{ url_for('movie')}}" class="menu-list-item">Movies</a></li>
+                    <li><a href="{{ url_for('series')}}" class="menu-list-item">Series</a></li>
+
+                    <li><a href="{{ url_for('tickets')}}" class="menu-list-item">Tickets</a></li>
+
+                    <li><a href="{{ url_for('about')}}" class="menu-list-item">About</a></li>
+                    <li><a href="{{ url_for('team')}}" class="menu-list-item">Team</a></li>
+                    <li><a href="{{ url_for('faq')}}" class="menu-list-item">FAQ</a></li>
+                    {% if session.authenticated %}
+                    <li><a class="menu-list-item" href="{{ url_for('user_page', user_id=session.uid)}}">{{session.username | capitalize}}</a></li>
+                    <li><a class="menu-list-item" href="{{ url_for('logout')}}">Logout</a></li>
+                    {% else %}
+                    <li><a class="menu-list-item" href="{{ url_for('login')}}">Login</a></li>
+                    <li><a class="menu-list-item" href="{{ url_for('register')}}">Register</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            
+
+</header>
+<body>
+    <div class="accordion">
+        <div class="accordion-content">
+            <header>
+                <span class="title">How to return the purchased ticket?</span>
+                <i class="fa-solid fa-plus"></i>
+            </header>
+
+            <p class="description">
+                If your plans have changed, you can return the purchased ticket half an hour before the start of the session.
+                To return a ticket purchased at the cinema box office, contact the administrator and ask for a ticket refund application form. Fill out the form and give it to the administrator along with the movie ticket and the receipt issued when buying the ticket.
+            </p>
+        </div>
+
+        <div class="accordion-content">
+            <header>
+                <span class="title">Do I need to print out a ticket purchased online?</span>
+                <i class="fa-solid fa-plus"></i>
+            </header>
+
+            <p class="description">
+                Now with electronic tickets, you can enter the hall without queuing at the checkout!
+            </p>
+        </div>
+        <div class="accordion-content">
+            <header>
+                <span class="title">When will the schedule for tomorrow / the day after tomorrow / next week appear?</span>
+                <i class="fa-solid fa-plus"></i>
+            </header>
+
+            <p class="description">
+                The schedule for the new week (from Thursday) opens, as a rule, on Tuesday or Wednesday morning. The weekend schedule opens, as a rule, on Friday morning.
+        </div>
+        <div class="accordion-content">
+            <header>
+                <span class="title">How to go to the cinema cheaper?</span>
+                <i class="fa-solid fa-plus"></i>
+            </header>
+
+            <p class="description">
+                Each of our cinemas has its own system of benefits. At a discount, students, schoolchildren, children, pensioners, birthday people can go to the cinema with us! And in the "Flying Days" anyone will be able to watch a movie at a special price throughout the day.
+            </p>
+        </div>
+    </div>
+    
+    <script src="{{url_for('static', filename='assets/js/faq.js')}}"></script>
+</body>
+</html>

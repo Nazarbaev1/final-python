@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="{{url_for('static', filename='assets/css/movie.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='assets/img/favicon.png')}}" rel="shortcut icon" type="image/x-icon">
+    <title>SERIES</title>
+</head>
+
+<body>
+    <header>
+        <video src="{{url_for('static', filename='assets/video/videoplayback.webm')}}" autoplay muted></video>
+        <nav>
+            <div class="logo_ul">
+                <img src="{{url_for('static', filename='assets/img/logo.png')}}" alt="">
+                <ul>
+                   
+                        <li><a href="{{ url_for('home') }}" class="menu-list-item">Home</a></li>
+                   
+                 
+                </ul>
+            </div>
+            <div class="search_user">
+                <input type="text" placeholder="Search..." id="search_input">
+              
+                <div class="search">
+                    <!-- <a href="#" class="card">
+                        <img src="img/jurasic.jpg" alt="">
+                        <div class="cont">
+                            <h3>The Boys </h3>
+                            <p>Action, 2021 , <span>IMDB</span><i class="bi bi-star-fill"></i> 9.6</p>
+                        </div>
+                    </a> -->
+
+                </div>
+            </div>
+        </nav>
+        <div class="content">
+            <h1 id="title">Money Heist</h1>
+            <p>Eight thieves take hostages and lock themselves in the Royal Mint of Spain while the criminal authority manipulates the police to implement his plan.</p>
+            <div class="details">
+                <h6>A Netflix Original Film</h6>
+                <h5 id="gen">Action</h5>
+                <h4 id="date">2020</h4>
+                <h3 id="rate"><span>IMDB</span><i class="bi bi-star-fill"></i> 8.0</h3>
+            </div>
+            <div class="btns">
+
+                <a href="#" id="play">Watch <i class="bi bi-play-fill"></i></a>
+                <a href="{{ url_for('upload_file') }}" id="download_main">Upload your file here <i class="bi bi-cloud-arrow-down-fill"></i></a>
+            </div>
+        </div>
+        <section>
+            <h4>Popular</h4>
+            <i class="bi bi-chevron-left"></i>
+            <i class="bi bi-chevron-right"></i>
+            <div class="cards">
+                <a href="#" class="card">
+                    <img src="{{url_for('static', filename='assets/img/the boys.jpg')}}" alt="" class="poster">
+                    
+        </section>
+    </header>
+    <script src="{{url_for('static', filename='assets/js/tvseries.js')}}"></script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!-- INHERITING CONTENT FROM EXISTING FILE BASE.HTML -->
+{% extends "base.html"%} 
+
+<!-- PUTTING DATA IN BLOCK(S) PREDEFINED IN BASE.HTML -->
+{% block title%}
+User Page
+ <!-- CLOSING THE BLOCK (MUST BE DONE!!!) -->
+{% endblock %}
+
+<!-- PUTTING DATA IN BLOCK(S) PREDEFINED IN BASE.HTML -->
+{%block main_body%}
+
+<main id="main">
+<div class="container">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+    
+          <div class="d-flex justify-content-between align-items-center">
+            <h2>User Page</h2>
+            <ol>
+              <li><a href="{{ url_for('home') }}">Home</a></li>
+              <li>User Page</li>
+              
+            </ol>
+          </div>
+    
+        </div>
+      </section><!-- End Breadcrumbs Section -->
+    
+      <section class="inner-page">
+        <div class="container">
+          <p>
+           <h4> <b>Some User Data here</b></h4>
+    
+            {% if context%}
+            <table>
+              <tr>
+                  <td>Username:</td> <td>{{context.login}}</td>
+              </tr>
+             
+              <tr>
+                  <td>First Name:</td> <td>{{context.user_fname}}</td>
+              </tr>
+              
+              <tr>
+                  <td>Second Name:</td> <td> {{context.user_sname}}</td>
+              </tr>
+              
+          </table> 
+          <h1>Файлы</h1>
+    
+        <p style="color:red">{{context.Status}}<p>
+    
+            <form action="{{ url_for('upload_file')}}" method="POST" enctype="multipart/form-data">
+    
+              <input type="file" name="file_to_save">
+            <input type="hidden" name="user_id" id="user-id" value="{{context.user_id}}">
+              <input type="submit" value="Upload">
+            </form>
+              
+              {% endif %}
+          </p>
+        </div>
+      </section>
+</div>
+    
+  
+  </main><!-- End #main -->
+  
+  <!-- CLOSING THE BLOCK (MUST BE DONE!!!) -->
+  {% endblock %}

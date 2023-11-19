@@ -1,0 +1,53 @@
+[ {
+    "name": "Money Heist",
+    "imdb": 9.9,
+    "date": "2020",
+    "sposter": "img/money heist.jpg",
+    "bposter": "img/money heist1.jpg",
+    "genre": "Action",
+    "type": "series",
+    "url": "money heist.html",
+    "trailer": "money heist trailer.mp4",
+    "low": "video/money heist 480ph.mp4",
+    "medium": "video/money heist 720ph.mp4",
+    "high": "video/money heist 1080ph.mp4"
+},    {
+    "name": "Moon Knight",
+    "imdb": 7.3,
+    "date": "2022",
+    "sposter": "img/moon knight.jpg",
+    "bposter": "img/moon knight1.webp",
+    "genre": "Action",
+    "type": "series",
+    "url": "moon knight.html",
+    "trailer": "john wick trailer.mp4",
+    "low": "video/moon knight 480ph.mp4",
+    "medium": "video/moon knight 720ph.mp4",
+    "high": "video/moon knight 1080ph.mp4"
+}, {
+    "name": "Collage Romance",
+    "imdb": 7.9,
+    "date": "2021",
+    "sposter": "img/collage romance.jpg",
+    "bposter": "img/collage romance1.jpg",
+    "genre": "Action",
+    "type": "series",
+    "url": "collage romance.html",
+    "trailer": "john wick trailer.mp4",
+    "low": "video/collage romance 480ph.mp4",
+    "medium": "video/collage romance 720ph.mp4",
+    "high": "video/collage romance 1080ph.mp4"
+}, {
+    "name": "Eternals",
+    "imdb": 9.0,
+    "date": "2022",
+    "sposter": "img/eternals.jpg",
+    "bposter": "img/eternals1.webp",
+    "genre": "Action",
+    "type": "movie",
+    "url": "eternals.html",
+    "trailer": "john wick trailer.mp4",
+    "low": "video/eternals 480ph.mp4",
+    "medium": "video/eternals 720ph.mp4",
+    "high": "video/eternals 1080ph.mp4"
+}]

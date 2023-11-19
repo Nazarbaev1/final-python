@@ -1,0 +1,74 @@
+<!-- INHERITING CONTENT FROM EXISTING FILE BASE.HTML -->
+{% extends "base.html"%} 
+
+<!-- PUTTING DATA IN BLOCK(S) PREDEFINED IN BASE.HTML -->
+{% block title%}
+register
+
+{% endblock %}
+
+<!-- PUTTING DATA IN BLOCK(S) PREDEFINED IN BASE.HTML -->
+{%block main_body%}
+
+<main id="main" class="fixed-top">
+
+  <!-- ======= Breadcrumbs Section ======= -->
+  <section class="breadcrumbs">
+    <div class="container">
+
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Registration Page</h2>
+        <ol>
+   
+          {% if context%}
+          {{context}}
+          {% endif %}
+
+          
+        </ol>
+      </div>
+
+    </div>
+  </section><!-- End Breadcrumbs Section -->
+<style></style>
+  <section class="inner-page">
+    <div class="container">
+      <p>
+      
+        <form action="{{ url_for('register')}}" method="POST" enctype="multipart/form-data">
+            <table>
+                <tr>
+                    <td>Username:</td> <td><input type="text" name="username" placeholder="Username" required></td>
+                </tr>
+               
+                <tr>
+                    <td>First Name:</td> <td><input type="text" name="fname" placeholder="First Name" required></td>
+                </tr>
+                
+                <tr>
+                    <td>Second Name:</td> <td> <input type="text" name="sname" placeholder="Second Name" required></td>
+                </tr>
+                
+                <tr>
+                    <td>Password:</td> <td> <input type="password" name="password" placeholder="Password" required></td>
+                </tr>
+               
+                <tr>
+                    <td>Confirm Password:</td> <td><input type="password" name="password_conf" placeholder="Password Confirmation" required></td>
+                </tr>
+               
+                <tr>
+                    <td></td> <td> <input type="submit" value="Let's go"></td> <td></td>
+                </tr>
+                <style></style>
+            </table> 
+         
+        </form> 
+
+      </p>
+    </div>
+  </section>
+
+</main><!-- End #main -->
+<!-- CLOSING THE BLOCK (MUST BE DONE!!!) -->
+{% endblock %}

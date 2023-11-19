@@ -1,0 +1,48 @@
+<!-- INHERITING CONTENT FROM EXISTING FILE BASE.HTML -->
+{% extends "base.html"%} 
+
+<!-- PUTTING DATA IN BLOCK(S) PREDEFINED IN BASE.HTML -->
+{% block title%}
+cinema system
+
+{% endblock %}
+
+<!-- PUTTING DATA IN BLOCK(S) PREDEFINED IN BASE.HTML -->
+{%block main_body%}
+
+
+<main id="main" class="fixed-top">
+
+  <!-- ======= Breadcrumbs Section ======= -->
+  <section class="breadcrumbs">
+    <div class="container">
+
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Upload file here:</h2>
+      </div>
+
+    </div>
+  </section><!-- End Breadcrumbs Section -->
+
+  <section class="inner-page">
+    <div class="container">
+      <p>
+        {% if context %}
+          <p style="color:red">{{context.Status}}<p>
+        {% endif %}
+
+    
+        <form action="{{ url_for('upload_file')}}" method="POST" enctype="multipart/form-data">
+
+          <input type="file" name="file_to_save">
+          <input type="hidden" name="user_id" id="user-id" value="{{context.user_id}}">
+          <input type="submit" value="Upload">
+        </form> 
+      </p>
+    </div>
+  </section>
+
+</main><!-- End #main -->
+
+<!-- CLOSING THE BLOCK (MUST BE DONE!!!) -->
+{% endblock %}

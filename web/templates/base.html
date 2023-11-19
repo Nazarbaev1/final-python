@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{url_for('static', filename='assets/css/style.css')}}" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" rel="stylesheet" >
+    <title>Movie Design</title>
+</head>
+<header>
+    <div class="navbar">
+        <div class="navbar-container">
+            <div class="logo-container">
+                <h1 class="logo"><a href="/">flakes</a></h1>
+            </div>
+            <div class="menu-container">
+                <ul class="menu-list">
+                    <li><a href="{{ url_for('home') }}" class="menu-list-item">Home</a></li>
+
+                    <li><a href="{{ url_for('movie')}}" class="menu-list-item">Movies</a></li>
+                    <li><a href="{{ url_for('series')}}" class="menu-list-item">Series</a></li>
+
+                    <li><a href="{{ url_for('tickets')}}" class="menu-list-item">Tickets</a></li>
+
+                    <li><a href="{{ url_for('about')}}" class="menu-list-item">About</a></li>
+                    <li><a href="{{ url_for('team')}}" class="menu-list-item">Team</a></li>
+                    <li><a href="{{ url_for('faq')}}" class="menu-list-item">FAQ</a></li>
+                    {% if session.authenticated %}
+                    <li><a class="menu-list-item" href="{{ url_for('user_page', user_id=session.uid)}}">{{session.username | capitalize}}</a></li>
+                    <li><a class="menu-list-item" href="{{ url_for('logout')}}">Logout</a></li>
+                    {% else %}
+                    <li><a class="menu-list-item" href="{{ url_for('login')}}">Login</a></li>
+                    <li><a class="menu-list-item" href="{{ url_for('register')}}">Register</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="profile-container">
+                <img class="profile-picture" src="{{url_for('static', filename='assets/img/the boys1.jpg')}}"  alt="">
+                
+            </div>
+        </div>
+    </div>
+    
+
+
+
+</header>
+{% block main_body %}
+
+
+{% endblock %}
+</html>

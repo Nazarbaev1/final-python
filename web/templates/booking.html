@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Movie Seat Booking</title>
+    <link href="{{url_for('static', filename='assets/css/tickets.css')}}" rel="stylesheet" >
+    
+    <style>
+      
+    </style>
+  </head>
+  <body>
+    
+    <div>
+      <img src="{{url_for('static', filename='assets/img/f-t-1.png')}}" class="main-logo" />
+    </div>
+
+    <video autoplay muted loop id="background-video">
+      <source src="{{url_for('static', filename='assets/video/222222222.webm')}}" type="video/mp4">
+    </video>
+    <div class="movie-container">
+      <label style="font-size: 1em;">Pick a movie:</label>
+      <select id="movie">
+        <option value="10">Jurassic Park ($10)</option>
+        <option value="12">Logan ($12)</option>
+        <option value="8">Avengers Infinity War ($8)</option>
+      </select>
+    </div>
+
+    <ul class="showcase">
+      <li>
+        <div id="seat" class="seat"></div>
+        <small class="status" style="font-size: 1em;">N/A</small>
+      </li>
+      <li>
+        <div id="seat" class="seat selected"></div>
+        <small class="status" style="font-size: 1em;">Selected</small>
+      </li>
+      <li>
+        <div id="seat" class="seat occupied"></div>
+        <small class="status" style="font-size: 1em;">Occupied</small>
+      </li>
+    </ul>
+
+    <div class="container">
+      <div class="screen"></div>
+
+      <div class="row">
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+      </div>
+      <div class="row">
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat occupied"></div>
+        <div id="seat" class="seat occupied"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+      </div>
+      <div class="row">
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat occupied"></div>
+        <div id="seat" class="seat occupied"></div>
+      </div>
+      <div class="row">
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+      </div>
+      <div class="row">
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat occupied"></div>
+        <div id="seat" class="seat occupied"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+      </div>
+      <div class="row">
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat"></div>
+        <div id="seat" class="seat occupied"></div>
+        <div id="seat" class="seat occupied"></div>
+        <div id="seat" class="seat occupied"></div>
+        <div id="seat" class="seat"></div>
+      </div>
+    </div>
+
+    <p class="text" style="font-size: 1em;margin:0px 0px 15px 0px">
+      You have selected <span id="count">0</span> seats for a price of $<span
+        id="total"
+        >0</span
+      >
+    </p>
+
+    <a href="{{ url_for('home') }}">
+      <button class="btn-home">
+        Home
+      </button>
+    </a>
+    
+
+    <script>
+     
+      var count=0;
+      var seats=document.getElementsByClassName("seat");
+      for(var i=0;i<seats.length;i++){
+        var item=seats[i];
+        
+        item.addEventListener("click",(event)=>{
+          var price= document.getElementById("movie").value;
+
+          if (!event.target.classList.contains('occupied') && !event.target.classList.contains('selected') ){
+          count++;
+          
+          var total=count*price;
+          event.target.classList.add("selected");
+          document.getElementById("count").innerText=count;
+          document.getElementById("total").innerText=total;
+
+          }
+        })
+      }
+    </script>
+  </body>
+</html>

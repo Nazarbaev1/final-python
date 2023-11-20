@@ -7,6 +7,7 @@ from werkzeug.utils import secure_filename
 from .database.models import User, File, db
 from .database import crud
 
+# If you need to run through flask_main, you need to remove the points before flaskapp, database, database.models
 
 @app.route('/')
 @app.route('/home')

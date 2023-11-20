@@ -4,7 +4,7 @@ from flask import Flask
 
 app = Flask(__name__)
 
-
+# Also for run through flask_main, remove point before flaskapp 
 
 class User(db.Model):
     __tablename__ = "users"

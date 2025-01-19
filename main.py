@@ -7,6 +7,8 @@ from web.flask_main import app
 
 models.Base.metadata.create_all(bind=engine)
 
+#flag{there_1s_n0_t1m3_f0rbase64}
+
 
 fapp = FastAPI()
 
